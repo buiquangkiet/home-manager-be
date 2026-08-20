@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: home-manager-be
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        value: home-manager-super-secret-key-2026
+      - key: DATABASE_URL
+        value: postgresql://postgres.ggerkqkoocziwxjwtxlt:123Aa%40%40quangkiet@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres
